@@ -1,0 +1,13 @@
+= simple_form_for(@summoner) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :server
+    / = f.input :icon_id
+    / = f.input :riot_id
+    / = f.input :acct_id
+    / = f.association :user
+
+  .form-actions
+    = f.button :submit

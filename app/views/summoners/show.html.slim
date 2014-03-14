@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @summoner.name
+p
+  strong Server:
+  = @summoner.server
+p
+  strong Icon:
+  = @summoner.icon_id
+p
+  strong Riot:
+  = @summoner.riot_id
+p
+  strong Acct:
+  = @summoner.acct_id
+p
+  strong User:
+  = @summoner.user.name
+
+= link_to 'Edit', edit_summoner_path(@summoner)
+'|
+= link_to 'Back', summoners_path

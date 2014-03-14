@@ -1,0 +1,29 @@
+h1 Listing summoners
+
+table
+  tr
+    th Name
+    th Server
+    th Icon
+    th Riot
+    th Acct
+    th User
+    th
+    th
+    th
+
+  - @summoners.each do |summoner|
+    tr
+      td = summoner.name
+      td = summoner.server
+      td = summoner.icon_id
+      td = summoner.riot_id
+      td = summoner.acct_id
+      td = summoner.user.name
+      td = link_to 'Show', summoner
+      td = link_to 'Edit', edit_summoner_path(summoner)
+      td = link_to 'Destroy', summoner, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Summoner', new_summoner_path
