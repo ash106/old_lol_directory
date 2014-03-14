@@ -41,3 +41,39 @@ gem 'jbuilder', '~> 1.2'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'bootstrap-sass'
+gem 'cancan'
+gem 'devise'
+gem 'figaro'
+gem 'pg'
+gem 'rolify'
+gem 'simple_form'
+gem 'slim-rails'
+gem 'unicorn'
+gem 'unicorn-rails'
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
+  gem 'guard-bundler'
+  gem 'guard-rails'
+  gem 'haml2slim'
+  gem 'html2haml'
+  gem 'hub', :require=>nil
+  gem 'rails_layout'
+  gem 'rb-fchange', :require=>false
+  gem 'rb-fsevent', :require=>false
+  gem 'rb-inotify', :require=>false
+end
+
+group :development, :test do
+  gem 'factory_girl_rails'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'minitest-spec-rails'
+  gem 'minitest-wscolor'
+end
+
