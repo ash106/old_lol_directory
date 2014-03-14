@@ -39,6 +39,17 @@ class SummonersController < ApplicationController
       @summoner.icon_id = response.body["profileIconId"]
       @summoner.riot_id = response.body["summonerId"]
       @summoner.acct_id = response.body["acctId"]
+
+      search_string = "https://community-league-of-legends.p.mashape.com/api/v1.0/#{server}/summoner/getLeagueForPlayer/#{@summoner.riot_id}"
+      response = Unirest.get(search_string)
+
+      if response.code == 200
+        response.body["entries"]["array"].each do |entry|
+          if entry["playerOrTeamName"] == response.body["requestorsName"]
+            @summoner.league = entry
+          end
+        end
+      end
     end
 
     respond_to do |format|
